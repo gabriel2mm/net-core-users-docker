@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{9E3438B1-9B73-4307-B99D-F788C0C48387}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MsUsers/Program.cs">
+    <Files>
+      <File FileName="MsUsers/Controllers/UsersController.cs" Line="30" Column="25" />
+      <File FileName="MsUsers/appsettings.json" Line="3" Column="121" />
+      <File FileName="MsUsers/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MsUsers" expanded="True">
+            <Node name="MsUsers" expanded="True">
+              <Node name="Context" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="MsUsers" expanded="True">
+            <Node name="MsUsers" expanded="True">
+              <Node name="MsUsers" expanded="True">
+                <Node name="MsUsers.models.entity.User" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MsUsers PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
