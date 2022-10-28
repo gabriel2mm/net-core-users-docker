@@ -1,0 +1,9 @@
+.vs
+.vscode
+**/obj
+**/bin
+/bin
+/obj
+/postgres
+docker-compose.debug.yml
+**.vscode
