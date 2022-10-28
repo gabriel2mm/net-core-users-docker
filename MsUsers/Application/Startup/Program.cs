@@ -11,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MsUsers.Context;
 
-namespace MsUsers
+namespace MsUsers.Applications.Configurations
 {
     public static class Program
     {

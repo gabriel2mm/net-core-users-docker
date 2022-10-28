@@ -3,17 +3,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Context\" />
     <None Remove="Microsoft.EntityFrameworkCore" />
     <None Remove="Microsoft.EntityFrameworkCore.Relational" />
     <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
-    <None Remove="contracts\" />
     <None Remove="AutoMapper" />
     <None Remove="AutoMapper.Collection" />
+    <None Remove="Application\Configuration\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Context\" />
-    <Folder Include="contracts\" />
+    <Folder Include="Application\Startup\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.30" />

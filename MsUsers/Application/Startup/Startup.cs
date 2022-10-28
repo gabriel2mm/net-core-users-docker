@@ -13,12 +13,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MsUsers.Context;
 using MsUsers.Contracts;
-using MsUsers.models.entity;
 using MsUsers.Models.Mapper;
 using MsUsers.Repository;
 using MsUsers.Services;
 
-namespace MsUsers
+namespace MsUsers.Applications.Configurations
 {
     public class Startup
     {
