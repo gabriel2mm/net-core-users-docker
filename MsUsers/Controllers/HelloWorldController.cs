@@ -21,7 +21,7 @@ namespace MsUsers.Controllers
         [HttpGet]
         public String Get()
         {
-           return "Olá Mundo!";
+           return "Olá Docker!";
         }
     }
 }

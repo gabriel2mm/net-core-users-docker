@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MsUsers.Context;
+using MsUsers.Contracts;
+using MsUsers.models.entity;
+using MsUsers.Models.Mapper;
+using MsUsers.Repository;
+using MsUsers.Services;
 
 namespace MsUsers
 {
@@ -27,9 +33,14 @@ namespace MsUsers
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(typeof(UserMapper));
 
-            services.AddEntityFrameworkNpgsql()
-            .AddDbContext<UserContext>(options => options.UseNpgsql(Configuration.GetConnectionString("UsersDBConnectionString")));
+            services.AddDbContext<PostgresContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("UsersDBConnectionString")));
+
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

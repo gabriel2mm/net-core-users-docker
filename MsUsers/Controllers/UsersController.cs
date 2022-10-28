@@ -4,35 +4,48 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MsUsers.Context;
+using MsUsers.Contracts;
 using MsUsers.models.entity;
+using MsUsers.Models.Dtos;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MsUsers.Controllers
 {
     [Route("api/[controller]")]
-    public class UsersController : Controller
+    public class UsersController : Controller, IUserController
     {
-        private readonly UserContext _userContext;
+        private readonly IUserService _userService;
 
-        public UsersController([FromServices] UserContext userContext)
+        public UsersController(IUserService userService)
         {
-            _userContext = userContext;
+            _userService = userService;
         }
 
-        // GET: api/values
         [HttpGet]
-        public IEnumerable<User> Get()
+        public IEnumerable<UserDTO> GetAll()
         {
-            return _userContext.Users;
+            return this._userService.GetAll();
         }
 
-        [HttpGet("/teste")]
-        public String GetTeste()
+        public UserDTO CreateUser(UserDTO userDTO)
         {
-            return "Teste";
+            throw new NotImplementedException();
+        }
+
+        public void DeleteUser()
+        {
+            throw new NotImplementedException();
         }
 
 
+        public UserDTO GetUserById(long id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public UserDTO UpdateUser(UserDTO userDTO)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

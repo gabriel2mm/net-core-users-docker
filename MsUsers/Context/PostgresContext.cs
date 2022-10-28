@@ -4,11 +4,11 @@ using MsUsers.models.entity;
 
 namespace MsUsers.Context
 {
-    public class UserContext : DbContext
+    public class PostgresContext : DbContext
     {
         public DbSet<User> Users { get; set; }
 
-        public UserContext(DbContextOptions<UserContext> options) : base(options)
+        public PostgresContext(DbContextOptions<PostgresContext> options) : base(options)
         {
         }
     }

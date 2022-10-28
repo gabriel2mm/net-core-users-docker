@@ -11,7 +11,7 @@ namespace MsUsers.models.entity
     public class User
     {
         [Key]
-        public long Id { get; private set;}
+        public long Id { get; set;}
         public String Email { get; set;}
         public String Password { get; set; }
     }

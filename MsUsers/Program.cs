@@ -17,13 +17,6 @@ namespace MsUsers
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
-
-            using (var scope = host.Services.CreateScope())
-            {
-                var db = scope.ServiceProvider.GetRequiredService<UserContext>();
-                db.Database.Migrate();
-            }
-
             host.Run();
         }
 

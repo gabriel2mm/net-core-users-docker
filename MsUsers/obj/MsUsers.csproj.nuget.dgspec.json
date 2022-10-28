@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/gabriel/Desktop/Desenvolvimento/c#/MsUsers/MsUsers/MsUsers.csproj": {}
+    "/app/MsUsers.csproj": {}
   },
   "projects": {
-    "/Users/gabriel/Desktop/Desenvolvimento/c#/MsUsers/MsUsers/MsUsers.csproj": {
+    "/app/MsUsers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gabriel/Desktop/Desenvolvimento/c#/MsUsers/MsUsers/MsUsers.csproj",
+        "projectUniqueName": "/app/MsUsers.csproj",
         "projectName": "MsUsers",
-        "projectPath": "/Users/gabriel/Desktop/Desenvolvimento/c#/MsUsers/MsUsers/MsUsers.csproj",
-        "packagesPath": "/Users/gabriel/.nuget/packages/",
-        "outputPath": "/Users/gabriel/Desktop/Desenvolvimento/c#/MsUsers/MsUsers/obj/",
+        "projectPath": "/app/MsUsers.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/app/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/gabriel/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -24,7 +24,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -36,8 +35,19 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "AutoMapper.Collection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.30, )"
@@ -57,25 +67,10 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.osx-x64",
-              "version": "[3.1.30, 3.1.30]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -84,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.424/RuntimeIdentifierGraph.json"
         }
       }
     }
