@@ -10,3 +10,7 @@ docker-compose.debug.yml
 .DS_Store
 **.DS_Store
 .vs/MsUsers/xs
+
+**/postgres
+**/postgres/**
+/postgres/**
