@@ -7,3 +7,6 @@
 /postgres
 docker-compose.debug.yml
 **.vscode
+.DS_Store
+**.DS_Store
+.vs/MsUsers/xs
