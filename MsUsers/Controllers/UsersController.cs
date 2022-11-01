@@ -53,7 +53,7 @@ namespace MsUsers.Controllers
             return this._userService.ToggleStatusUser(id, status);
         }
         
-        [HttpPut("{id}/change-status")]
+        [HttpPut("{id}")]
         public StatusChangedDTO UpdateUser(long id, [FromBody] UserDTO userDTO)
         {
             return this._userService.UpdateUser(id, userDTO);
