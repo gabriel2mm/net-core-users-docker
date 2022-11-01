@@ -7,8 +7,7 @@ services:
       dockerfile: MsUsers/Dockerfile.develop
     ports:
       - 8084:8084
-      - 8080:8080
-      - 443:443
+      - 8085:8085
     networks:
       - postgres
     restart: unless-stopped

@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MsUsers.Context;
 using MsUsers.Contracts;
+using MsUsers.Domain.Dtos;
 using MsUsers.models.entity;
 using MsUsers.Models.Dtos;
 
 
 namespace MsUsers.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class UsersController : Controller, IUserController
     {
         private readonly IUserService _userService;
@@ -21,31 +23,40 @@ namespace MsUsers.Controllers
             _userService = userService;
         }
 
+        [HttpPost]
+        public StatusChangedDTO CreateUser([FromBody] UserDTO userDTO)
+        {
+            return this._userService.CreateUser(userDTO);
+        }
+
         [HttpGet]
         public IEnumerable<UserDTO> GetAll()
         {
             return this._userService.GetAll();
         }
 
-        public UserDTO CreateUser(UserDTO userDTO)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteUser()
-        {
-            throw new NotImplementedException();
-        }
-
-
+        [HttpGet("{id}")]
         public UserDTO GetUserById(long id)
         {
-            throw new NotImplementedException();
+            return this._userService.GetById(id);
         }
 
-        public UserDTO UpdateUser(UserDTO userDTO)
+        [HttpPatch("{id}/change-status-email")]
+        public StatusChangedDTO ToggleStatusEmail(long id, [FromBody] StatusDTO status)
+        { 
+            return this._userService.ToggleStatusEmail(id, status);
+        }
+
+        [HttpPatch("{id}/change-status")]
+        public StatusChangedDTO ToggleStatusUser(long id, [FromBody]  StatusDTO status)
         {
-            throw new NotImplementedException();
+            return this._userService.ToggleStatusUser(id, status);
+        }
+        
+        [HttpPut("{id}/change-status")]
+        public StatusChangedDTO UpdateUser(long id, [FromBody] UserDTO userDTO)
+        {
+            return this._userService.UpdateUser(id, userDTO);
         }
     }
 }
