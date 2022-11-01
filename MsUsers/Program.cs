@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using MsUsers.Configurations;
 using MsUsers.Context;
 using MsUsers.Contracts;
 using MsUsers.Models.Mapper;
@@ -33,15 +34,15 @@ var app = builder.Build();
     app.UseSwagger();
     app.UseSwaggerUI();
 
+    
+    app.UseMiddleware(typeof(ErrorHandlingMiddleware));
+
+    //app.UseExceptionHandler("/error");
+
     // Configure the HTTP request pipeline.
-
-    app.UseExceptionHandler("/error");
     app.UseHttpsRedirection();
-
     app.UseAuthorization();
-
     app.MapControllers();
-
     app.Run();
 }
 

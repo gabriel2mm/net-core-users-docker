@@ -61,7 +61,7 @@ namespace MsUsers.Services
                 return new StatusChangedDTO("success", "Email activate changed!");
             }
 
-            throw new NotFoundException("E-mail activate failure, please contract the administrator.");
+            throw new UpdateException("E-mail activate failure, please contract the administrator.");
         }
 
         public StatusChangedDTO ToggleStatusUser(long id, StatusDTO status)
@@ -74,7 +74,7 @@ namespace MsUsers.Services
                 this._repository.SaveAll();
                 return new StatusChangedDTO("success", "user activate changed!");
             }
-            throw new NotFoundException("User activate failure, please contract the administrator.");
+            throw new UpdateException("User activate failure, please contract the administrator.");
         }
 
         public StatusChangedDTO UpdateUser(long id, UserDTO userDTO)
@@ -89,7 +89,7 @@ namespace MsUsers.Services
                 this._repository.SaveAll();
                 return new StatusChangedDTO("success", "user updated");
             }
-            throw new NotFoundException("User updated failure, please contract the administrator.");
+            throw new UpdateException("User updated failure, please contract the administrator.");
         }
     }
 }

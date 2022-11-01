@@ -7,9 +7,9 @@ namespace MsUsers.Domain.Contracts
 	{
         public HttpStatusCode StatusCode { get; }
 
-        public string ErrorMessage { get;}
+        public string ErrorMessage { get; set; }
 
-        public string ErrorDetail { get; }
+        public string ErrorDetail { get; set; }
     }
 }
 
