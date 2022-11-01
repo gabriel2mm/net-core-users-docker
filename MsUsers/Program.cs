@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Identity.Client;
 using MsUsers.Configurations;
 using MsUsers.Context;
 using MsUsers.Contracts;
@@ -10,6 +12,9 @@ using MsUsers.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 {
+    builder.Logging.ClearProviders();
+    builder.Logging.AddConsole();
+
     // Add services to the container.
     builder.Services.AddControllers();
     builder.Services.AddDbContext<PostgresContext>(options =>

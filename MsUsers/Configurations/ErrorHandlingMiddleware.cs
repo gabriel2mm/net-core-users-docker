@@ -11,10 +11,12 @@ namespace MsUsers.Configurations
     public class ErrorHandlingMiddleware
     {
         private readonly RequestDelegate next;
+        private readonly ILogger<ErrorHandlingMiddleware> _logger;
 
-        public ErrorHandlingMiddleware(RequestDelegate next)
+        public ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandlingMiddleware> logger)
         {
             this.next = next;
+            this._logger = logger;
         }
 
         public async Task Invoke(HttpContext context)
@@ -25,13 +27,13 @@ namespace MsUsers.Configurations
             }
             catch (Exception ex)
             {
+                _logger.LogError(exception: ex, message: ex.Message);
                 await HandleExceptionAsync(context, ex);
             }
         }
 
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-
             var (statusCode, message, detail) = exception switch
             {
                 IError error => ((int)error.StatusCode, error.ErrorMessage, error.ErrorDetail),

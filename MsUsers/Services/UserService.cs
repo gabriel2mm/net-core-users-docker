@@ -69,7 +69,7 @@ namespace MsUsers.Services
             User? user = this._repository.Get(user => user.Id == id).FirstOrDefault();
             if (user != null)
             {
-                user.EmailVerified = status.Status;
+                user.UserActive = status.Status;
                 this._repository.Update(user);
                 this._repository.SaveAll();
                 return new StatusChangedDTO("success", "user activate changed!");
@@ -82,10 +82,12 @@ namespace MsUsers.Services
             User? user = this._repository.Get(user => user.Id == id).FirstOrDefault();
             if (user != null)
             {
-                User userFromDTO = this._mapper.Map<User>(userDTO);
-                userFromDTO.Id = user.Id;
+                user.Name = userDTO.Name;
+                user.Email = userDTO.Email;
+                user.Password = userDTO.Password;
+                user.SocialSecurity = userDTO.SocialSecurity;
 
-                this._repository.Update(userFromDTO);
+                this._repository.Update(user);
                 this._repository.SaveAll();
                 return new StatusChangedDTO("success", "user updated");
             }
